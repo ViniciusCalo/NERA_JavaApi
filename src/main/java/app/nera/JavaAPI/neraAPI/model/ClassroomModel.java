@@ -19,9 +19,9 @@ public class ClassroomModel {
     @Column(unique = true, nullable = false)
     private String tokenclass;
     @OneToOne
-    @JoinColumn(name="teacherid", referencedColumnName = "userid", unique = true, nullable = false)
+    @JoinColumn(name="teacherid", referencedColumnName = "teacherid", unique = true, nullable = false)
     private TeacherModel teacherid;
     @OneToOne
-    @JoinColumn(name="studentid", referencedColumnName = "userid", unique = true, nullable = false)
+    @JoinColumn(name="studentid", referencedColumnName = "studentid", unique = true, nullable = false)
     private StudentModel studentid;
 }
