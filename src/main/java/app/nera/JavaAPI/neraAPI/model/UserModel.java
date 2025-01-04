@@ -2,6 +2,8 @@ package app.nera.JavaAPI.neraAPI.model;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 public class UserModel {
 
@@ -68,5 +70,48 @@ public class UserModel {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public UserModel(String username, String useremail, String userpassword, String profilepicture, Role role) {
+        this.username = username;
+        this.useremail = useremail;
+        this.userpassword = userpassword;
+        this.profilepicture = profilepicture;
+        this.role = role;
+    }
+
+    public UserModel(Integer userid, String username, String useremail, String userpassword, String profilepicture, Role role) {
+        this.userid = userid;
+        this.username = username;
+        this.useremail = useremail;
+        this.userpassword = userpassword;
+        this.profilepicture = profilepicture;
+        this.role = role;
+    }
+
+    public UserModel(){}
+
+    @Override
+    public String toString () {
+
+        return "UserModel{" +
+                "userid=" + userid +
+                ", username='" + username + '\'' +
+                ", useremail='" + useremail + '\'' +
+                ", role=" + role +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserModel userModel = (UserModel) o;
+        return userid != null ? userid.equals(userModel.userid) : userModel.userid == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return userid != null ? userid.hashCode() : 0;
     }
 }
