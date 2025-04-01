@@ -2,8 +2,6 @@ package app.nera.JavaAPI.neraAPI.model;
 
 import jakarta.persistence.*;
 
-import java.util.Objects;
-
 @Entity
 public class UserModel {
 
